@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import drop_icon from "./assets/drop.svg";
+import todo_icon from "./assets/todo.svg";
+import done_icon from "./assets/done.svg";
 
 function App() {
     var savedItems = JSON.parse(localStorage.getItem("itemsList"));
@@ -91,7 +94,7 @@ function Item(props) {
         <li key={txt}>
             {ticked && (
                 <img
-                    src="./done.svg"
+                    src={done_icon}
                     alt="todo tick symbol"
                     className="tick"
                     onClick={() => {
@@ -101,7 +104,7 @@ function Item(props) {
             )}
             {!ticked && (
                 <img
-                    src="./todo.svg"
+                    src={todo_icon}
                     alt="todo tick symbol"
                     className="tick"
                     onClick={() => {
@@ -111,7 +114,7 @@ function Item(props) {
             )}
             <span>{txt}</span>
             <img
-                src="./drop.svg"
+                src={drop_icon}
                 alt="drop item symbol"
                 className="cross"
                 onClick={() => {
@@ -129,10 +132,10 @@ function AddItem(props) {
     return (
         <li>
             {ticked && (
-                <img src="./done.svg" alt="todo tick symbol" className="tick" />
+                <img src={done_icon} alt="todo tick symbol" className="tick" />
             )}
             {!ticked && (
-                <img src="./todo.svg" alt="todo tick symbol" className="tick" />
+                <img src={todo_icon} alt="todo tick symbol" className="tick" />
             )}
             <form className="add-item">
                 <input
