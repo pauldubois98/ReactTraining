@@ -10,3 +10,8 @@
 .box img {
     height: 10em;
 }
+
+.stroke {
+    position: relative;
+    z-index: 1;
+}

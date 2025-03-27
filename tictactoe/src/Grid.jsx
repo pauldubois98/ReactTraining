@@ -48,6 +48,32 @@ function CrossRandom(props) {
     const style = { transform: transfo };
     return <img src={cross_image} alt="cross" style={style} />;
 }
+function StrokeRandom(props) {
+    const r = props.random;
+    const rotation = props.rotation;
+    const scale = props.scale;
+    var transfo = "";
+    if ((rotation == 90 || rotation == 0) && r < 0.25) {
+        transfo += "scaleX(-1)";
+    } else if (r < 0.5) {
+        transfo += "scaleX(-1) " + "scaleY(-1)";
+        console.log(transfo, rotation);
+    } else if ((rotation == 90 || rotation == 0) && r < 0.75) {
+        transfo += "scaleY(-1)";
+    }
+    console.log(transfo, rotation, r);
+    transfo += "rotate(" + rotation + "deg) scale(" + scale + "";
+    var style = {
+        transform: transfo,
+    };
+    if (rotation == 0) {
+        style.top = "-10em";
+    }
+    if (rotation == 90) {
+        style.left = "-10em";
+    }
+    return <img src={stroke} alt="circle" style={style} className="stroke" />;
+}
 
 function Box(props) {
     const v = props.value;
