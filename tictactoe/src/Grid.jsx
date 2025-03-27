@@ -79,7 +79,7 @@ function Box(props) {
     const v = props.value;
     const rowIndex = props.rowIndex;
     const columnIndex = props.columnIndex;
-    const random = (props.random/2) + (3 * columnIndex + rowIndex) / 18;
+    const random = (props.random * (3 * columnIndex + rowIndex + 1)) % 1;
     const grid = props.grid;
     const setGrid = props.setGrid;
 
