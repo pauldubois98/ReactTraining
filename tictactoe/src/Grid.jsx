@@ -13,6 +13,8 @@ import cross3 from "./assets/cross3.svg";
 import cross4 from "./assets/cross4.svg";
 import cross5 from "./assets/cross5.svg";
 
+import stroke from "./assets/stroke.svg";
+
 import { testWin } from "./utils";
 
 function CircleRandom(props) {
