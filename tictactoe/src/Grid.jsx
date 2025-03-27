@@ -14,6 +14,7 @@ import cross4 from "./assets/cross4.svg";
 import cross5 from "./assets/cross5.svg";
 
 import stroke from "./assets/stroke.svg";
+import empty from "./assets/empty.svg";
 
 import { testWin } from "./utils";
 
@@ -110,6 +111,7 @@ function Box(props) {
         <div className="box" onClick={handleClick}>
             {v == 1 ? <CircleRandom random={random} /> : null}
             {v == -1 ? <CrossRandom random={random} /> : null}
+            {v == 0 ? <img src={empty} alt="empty" /> : null}
             {columnIndex == 0 &&
             grid[rowIndex][0] != 0 &&
             grid[rowIndex][0] == grid[rowIndex][1] &&
@@ -129,7 +131,7 @@ function Box(props) {
             grid[1][1] == grid[2][2] ? (
                 <StrokeRandom random={random} rotation={45} scale={1.35} />
             ) : null}
-            {rowIndex == 1 &&
+            {rowIndex == 0 &&
             columnIndex == 0 &&
             grid[0][2] != 0 &&
             grid[0][2] == grid[1][1] &&
