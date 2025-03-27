@@ -7,4 +7,7 @@ Link: [https://pauldubois98.github.io/ReactTraining/quizz/app/](https://pauldubo
 ## (Persistent) Todo
 A persistent todo list.<br>
 Link: [https://pauldubois98.github.io/ReactTraining/todo/app/](https://pauldubois98.github.io/ReactTraining/todo/app/)<br>
-*(this was done using local storage)*
+
+## Tic Tac Toe
+A tictactoe web app.<br>
+Link: [https://pauldubois98.github.io/ReactTraining/tictactoe/app/](https://pauldubois98.github.io/ReactTraining/tictactoe/app/)<br>
