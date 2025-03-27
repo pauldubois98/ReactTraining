@@ -18,11 +18,13 @@ button {
   border-color: dimgrey;
   margin: 5px;
 }
+
 button:hover {
   border-width: 0.3em;
   padding: 0.4em 1em;
 
 }
+
 button:active {
   background-color: dimgrey;
 
@@ -33,11 +35,21 @@ button:active {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f9f9f9f9;
+  background-color: #b7b7b7f9;
   width: 20em;
   height: 12em;
+  z-index: 2;
+  box-shadow: 0 1em 1em #b7b7b7f9,
+      0 -1em 1em #b7b7b7f9,
+      1em 0 1em #b7b7b7f9,
+      -1em 0 1em #b7b7b7f9,
+      1em 1em 1em #b7b7b7f9,
+      -1em -1em 1em #b7b7b7f9,
+      1em -1em 1em #b7b7b7f9,
+      -1em 1em 1em #b7b7b7f9;
 }
-h2{
+
+h2 {
   font-size: 3.2em;
   line-height: 1.1;
   text-align: center;
