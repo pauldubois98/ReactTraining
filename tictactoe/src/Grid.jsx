@@ -108,6 +108,32 @@ function Box(props) {
         <div className="box" onClick={handleClick}>
             {v == 1 ? <CircleRandom random={random} /> : null}
             {v == -1 ? <CrossRandom random={random} /> : null}
+            {columnIndex == 0 &&
+            grid[rowIndex][0] != 0 &&
+            grid[rowIndex][0] == grid[rowIndex][1] &&
+            grid[rowIndex][1] == grid[rowIndex][2] ? (
+                <StrokeRandom random={random} rotation={0} scale={1} />
+            ) : null}
+            {rowIndex == 0 &&
+            grid[0][columnIndex] != 0 &&
+            grid[0][columnIndex] == grid[1][columnIndex] &&
+            grid[1][columnIndex] == grid[2][columnIndex] ? (
+                <StrokeRandom random={random} rotation={90} scale={1} />
+            ) : null}
+            {rowIndex == 0 &&
+            columnIndex == 0 &&
+            grid[0][0] != 0 &&
+            grid[0][0] == grid[1][1] &&
+            grid[1][1] == grid[2][2] ? (
+                <StrokeRandom random={random} rotation={45} scale={1.35} />
+            ) : null}
+            {rowIndex == 1 &&
+            columnIndex == 0 &&
+            grid[0][2] != 0 &&
+            grid[0][2] == grid[1][1] &&
+            grid[1][1] == grid[2][0] ? (
+                <StrokeRandom random={random} rotation={-45} scale={1.35} />
+            ) : null}
         </div>
     );
 }
