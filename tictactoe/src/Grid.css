@@ -1,0 +1,12 @@
+.box {
+    border: 1px black solid;
+    width: 10em;
+    height: 10em;
+}
+
+.row {
+    display: flex;
+}
+.box img {
+    height: 10em;
+}
