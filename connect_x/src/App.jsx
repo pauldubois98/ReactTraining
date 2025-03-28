@@ -14,8 +14,18 @@ function App() {
     // max thinking time
     return (
         <React.Fragment>
-            <Form />
-            <Grid />
+            <Form
+                N={N}
+                setN={setN}
+                M={M}
+                setM={setM}
+                X={X}
+                setX={setX}
+                board={board}
+                setBoard={setBoard}
+            />
+            <Grid N={N} M={N} X={X} board={board} setBoard={setBoard} />
+            {board}
         </React.Fragment>
     );
 }
