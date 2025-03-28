@@ -5,6 +5,13 @@ import Grid from "./Grid";
 import Form from "./Form";
 
 function App() {
+    const [N, setN] = useState(7);
+    const [M, setM] = useState(6);
+    const [X, setX] = useState(4);
+    const [board, setBoard] = useState(new Array(N * M).fill(0));
+    // player 1 type
+    // player 2 type
+    // max thinking time
     return (
         <React.Fragment>
             <Form />
