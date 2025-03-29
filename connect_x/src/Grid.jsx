@@ -14,13 +14,22 @@ function Row(props) {
     return (
         <g>
             {row.map((cell, j) => (
-                <circle
-                    cx={50 + (j - (N - 1) / 2) * (2 * r)}
-                    cy={-SIDE / 2 + 100 - (i + 0.5) * (2 * r)}
-                    r={r * 0.95}
-                    fill="#1a1a1a"
-                    key={`${i}-${j}`}
-                />
+                <g key={`${i}-${j}`}>
+                    <circle
+                        cx={50 + (j - (N - 1) / 2) * (2 * r)}
+                        cy={-SIDE / 2 + 100 - (i + 0.5) * (2 * r)}
+                        r={r * 0.95}
+                        fill="#1a1a1a"
+                    />
+                    {cell != 0 ? (
+                        <circle
+                            cx={50 + (j - (N - 1) / 2) * (2 * r)}
+                            cy={-SIDE / 2 + 100 - (i + 0.5) * (2 * r)}
+                            r={r * 0.85}
+                            fill={cell == 1 ? "#c83737" : "#d4aa00"}
+                        />
+                    ) : null}
+                </g>
             ))}
         </g>
     );
