@@ -1,5 +1,6 @@
 import React from "react";
 import "./Grid.css";
+import { turn } from "./utils.js";
 const SIDE = 5;
 
 function Row(props) {
