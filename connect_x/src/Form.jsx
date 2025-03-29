@@ -1,3 +1,5 @@
+import "./Form.css";
+
 function Form(props) {
     const N = props.N;
     const setN = props.setN;
@@ -24,7 +26,7 @@ function Form(props) {
         const nb = Number(e.target.value);
         if (nb >= 1 && nb <= Math.max(N, M)) {
             setX(nb);
-            setBoard(new Array(N * M).fill(0));
+            // setBoard(new Array(N * M).fill(0));
         }
     }
     return (
