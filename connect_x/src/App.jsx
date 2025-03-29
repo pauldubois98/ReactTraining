@@ -24,8 +24,7 @@ function App() {
                 board={board}
                 setBoard={setBoard}
             />
-            <Grid N={N} M={N} X={X} board={board} setBoard={setBoard} />
-            {board}
+            <Grid N={N} M={M} X={X} board={board} setBoard={setBoard} />
         </React.Fragment>
     );
 }
