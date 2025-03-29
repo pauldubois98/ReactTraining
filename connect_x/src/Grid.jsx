@@ -32,10 +32,25 @@ function Grid(props) {
     const r = ((1 - SIDE / 100) * 50) / Math.max(N, M);
     const board = props.board;
     const setBoard = props.setBoard;
-
+    function handleClick(e) {
+        var rect = document.getElementById("grid").getBoundingClientRect();
+        var x = (100 * (e.clientX - rect.left)) / rect.width;
+        var i = Math.round((x - 50) / (2 * r) + (N - 1) / 2);
+        console.log(x, i);
+        while (i < board.length && board[i] != 0) {
+            i += N;
+        }
+        console.log(i);
+        if (i < board.length && board[i] == 0) {
+            var new_board = [...board];
+            new_board[i] = turn(board);
+            setBoard(new_board);
+            console.log(new_board);
+        }
+    }
     return (
         <React.Fragment>
-            <div id="grid">
+            <div id="grid" onClick={handleClick}>
                 <svg
                     id="gridSVG"
                     viewBox="0 0 100 100"
