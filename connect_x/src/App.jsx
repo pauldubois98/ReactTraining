@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Grid from "./Grid";
 import Form from "./Form";
+import Winner from "./Winner";
 
 function App() {
     const [N, setN] = useState(7);
@@ -25,6 +26,7 @@ function App() {
                 setBoard={setBoard}
             />
             <Grid N={N} M={M} X={X} board={board} setBoard={setBoard} />
+            <Winner winner={winner} board={board} restart={restart} />
         </React.Fragment>
     );
 }
