@@ -13,6 +13,9 @@ function App() {
     // player 1 type
     // player 2 type
     // max thinking time
+    function restart(e) {
+        setBoard(new Array(N * M).fill(0));
+    }
     return (
         <React.Fragment>
             <Form
