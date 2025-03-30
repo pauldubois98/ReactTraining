@@ -24,7 +24,6 @@ export function empty(board) {
 
 export function winnerMove(val, board, i, N, M, X) {
     const DIRECTONS = [1, N, N + 1, N - 1];
-    console.log(val, i, board, M, N, X);
     for (let d of DIRECTONS) {
         var c = 1;
         var j = i + d;
