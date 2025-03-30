@@ -11,7 +11,11 @@ function Winner(props) {
         <React.Fragment>
             {winner != 0 || empty(board) ? (
                 <div className="result">
-                    {winner != 0 ? <h2>Player {winner} won!</h2> : null}
+                    {winner != 0 ? (
+                        <h2 className={"player" + winner}>
+                            Player {winner == 1 ? "🔴" : "🟡"} won!
+                        </h2>
+                    ) : null}
                     {empty(board) ? <h2>No winner</h2> : null}
                     <button onClick={restart}>New Game</button>
                 </div>
