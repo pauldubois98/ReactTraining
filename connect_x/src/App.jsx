@@ -10,11 +10,13 @@ function App() {
     const [M, setM] = useState(6);
     const [X, setX] = useState(4);
     const [board, setBoard] = useState(new Array(N * M).fill(0));
+    const [winner, setWinner] = useState(0);
     // player 1 type
     // player 2 type
     // max thinking time
     function restart(e) {
         setBoard(new Array(N * M).fill(0));
+        setWinner(0);
     }
     return (
         <React.Fragment>
@@ -28,7 +30,15 @@ function App() {
                 board={board}
                 setBoard={setBoard}
             />
-            <Grid N={N} M={M} X={X} board={board} setBoard={setBoard} />
+            <Grid
+                N={N}
+                M={M}
+                X={X}
+                board={board}
+                setBoard={setBoard}
+                winner={winner}
+                setWinner={setWinner}
+            />
             <Winner winner={winner} board={board} restart={restart} />
         </React.Fragment>
     );

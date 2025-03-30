@@ -1,6 +1,6 @@
 import React from "react";
 import "./Grid.css";
-import { turn } from "./utils.js";
+import { turn, winnerMove } from "./utils.js";
 const SIDE = 5;
 
 function Row(props) {
@@ -42,21 +42,32 @@ function Grid(props) {
     const r = ((1 - SIDE / 100) * 50) / Math.max(N, M);
     const board = props.board;
     const setBoard = props.setBoard;
+    const winner = props.winner;
+    const setWinner = props.setWinner;
     function handleClick(e) {
+        if (winner != 0) {
+            return;
+        }
+        // get column index from mouse click
         var rect = document.getElementById("grid").getBoundingClientRect();
         var x = (100 * (e.clientX - rect.left)) / rect.width;
         var i = Math.round((x - 50) / (2 * r) + (N - 1) / 2);
-        console.log(x, i);
+        // check if column is full
         while (i < board.length && board[i] != 0) {
             i += N;
         }
-        console.log(i);
-        if (i < board.length && board[i] == 0) {
-            var new_board = [...board];
-            new_board[i] = turn(board);
-            setBoard(new_board);
-            console.log(new_board);
+        if (i >= board.length) {
+            return;
         }
+        const player = turn(board);
+        // check for winner
+        if (winnerMove(player, board, i, N, M, X)) {
+            setWinner(player);
+        }
+        // update board
+        var new_board = [...board];
+        new_board[i] = player;
+        setBoard(new_board);
     }
     return (
         <React.Fragment>
