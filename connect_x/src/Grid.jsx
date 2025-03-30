@@ -13,7 +13,7 @@ function Row(props) {
 
     return (
         <g>
-            {row.map((cell, j) => (
+            {Array.from(row).map((cell, j) => (
                 <g key={`${i}-${j}`}>
                     <circle
                         cx={50 + (j - (N - 1) / 2) * (2 * r)}
@@ -81,21 +81,19 @@ function Grid(props) {
                         height: "40em",
                         backgroundColor: "#4d4d4d",
                     }}>
-                    {Array(M)
-                        .keys()
-                        .map(function (i) {
-                            return (
-                                <Row
-                                    N={N}
-                                    M={M}
-                                    r={r}
-                                    board={board}
-                                    setBoard={setBoard}
-                                    i={i}
-                                    key={"row" + i}
-                                />
-                            );
-                        })}
+                    {Array.from(Array(M).keys()).map(function (i) {
+                        return (
+                            <Row
+                                N={N}
+                                M={M}
+                                r={r}
+                                board={board}
+                                setBoard={setBoard}
+                                i={i}
+                                key={"row" + i}
+                            />
+                        );
+                    })}
                 </svg>
             </div>
         </React.Fragment>
