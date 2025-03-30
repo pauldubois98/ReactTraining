@@ -11,3 +11,7 @@ Link: [https://pauldubois98.github.io/ReactTraining/todo/app/](https://paulduboi
 ## Tic Tac Toe
 A tictactoe web app.<br>
 Link: [https://pauldubois98.github.io/ReactTraining/tictactoe/app/](https://pauldubois98.github.io/ReactTraining/tictactoe/app/)<br>
+
+## Connect X
+A generalized connect 4 game.<br>
+Link: [https://pauldubois98.github.io/ReactTraining/connect_x/app/](https://pauldubois98.github.io/ReactTraining/connect_x/app/)<br>
