@@ -3,7 +3,7 @@ Built with React + Vite.
 
 ## Install libraries
 ```bash
-$ cd quizz
+$ cd tictactoe
 $ npm install
 ```
 
